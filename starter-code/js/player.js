@@ -21,14 +21,18 @@ Player.prototype.getAnswer = function(){
   return this.answer;
 };
 
-Player.prototype.updateQuesito = function(){
-
-};
-
 Player.prototype.updatePosition = function(dice){
   //console.log(dice);
   //console.log(this.position);
   this.position += dice;
   return this.position;
+
+};
+
+Player.prototype.updateQuesito = function(){
+
+};
+
+Player.prototype.win = function(){
 
 };
