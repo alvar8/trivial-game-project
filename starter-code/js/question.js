@@ -43,6 +43,19 @@ function QuestionAndAnswers(){
 ];
 }
 
-QuestionAndAnswers.protype.getQuestion = function(category, number){
+QuestionAndAnswers.prototype.getQuestion = function(category){
+  var randomNumber=Math.floor(Math.random()*5);
+
+  var theQuestion = this.category[randomNumber].question;
+
+  return theQuestion;
+
+};
+
+QuestionAndAnswers.prototype.compareAnswer = function(answer,playerAnswer){
+
+};
+
+QuestionAndAnswers.prototype.getRandomNumber = function(){
 
 };
