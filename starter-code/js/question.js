@@ -41,6 +41,7 @@ function QuestionAndAnswers(){
     {question : 'In javascript is null === undefined?', answer : 'No'},
     {question : 'In javascript, what means NaN?', answer : 'Not a number'}
 ];
+this.currentAnswer="";
 }
 
 QuestionAndAnswers.prototype.getQuestion = function(category){
@@ -48,8 +49,8 @@ QuestionAndAnswers.prototype.getQuestion = function(category){
 
   var theQuestion = category[randomNumber].question;
 
-  board.currentAnswer = category[randomNumber].answer;
-   console.log(board.currentAnswer);
+  this.currentAnswer = category[randomNumber].answer;
+   console.log(this.currentAnswer);
 
   return theQuestion;
 
@@ -63,7 +64,3 @@ QuestionAndAnswers.prototype.compareAnswer = function(answer,playerAnswer){
     return false;
   }
 };
-
-
-
-var question = new QuestionAndAnswers();
