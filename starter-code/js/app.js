@@ -2,20 +2,13 @@ var player1 = new Player();
 var player2 = new Player();
 var board = new Board();
 var question = new QuestionAndAnswers();
-var dice = new Dice();
+var myDice =new Dice();
 
-var div = $("<div>");
-
-for(var i=0; i<40; i++){
-$("#board").append(div);
-}
 
 $( document ).ready(function() {
+  $( document ).on( "click", function( event ) {
 
-  for(var i=0; i<40; i++){
+$("#try").text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
 
-  $("#board").append("<div></div>");
-
-  }
-
+});
 });

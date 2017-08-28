@@ -1,15 +1,6 @@
-#board{
-  width: 75%;
+img{
+  width: 80%;
   height: 800px;
   display: block;
   margin: 0 auto;
-  background-color: red;
-}
-
-div{
-  background-color: blue;
-  width: 20%;
-  height:100px;
-  display: inline-block;
-  
 }
