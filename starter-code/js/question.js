@@ -46,16 +46,24 @@ function QuestionAndAnswers(){
 QuestionAndAnswers.prototype.getQuestion = function(category){
   var randomNumber=Math.floor(Math.random()*5);
 
-  var theQuestion = this.category[randomNumber].question;
+  var theQuestion = category[randomNumber].question;
+
+  board.currentAnswer = category[randomNumber].answer;
+   console.log(board.currentAnswer);
 
   return theQuestion;
 
 };
 
 QuestionAndAnswers.prototype.compareAnswer = function(answer,playerAnswer){
-
+  console.log(playerAnswer);
+  if(answer == playerAnswer){
+    return true;
+  }else{
+    return false;
+  }
 };
 
-QuestionAndAnswers.prototype.getRandomNumber = function(){
 
-};
+
+var question = new QuestionAndAnswers();
