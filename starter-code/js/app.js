@@ -5,10 +5,19 @@ var question = new QuestionAndAnswers();
 var myDice =new Dice();
 
 
+var div = $("<div>");
+
+ for(var i=0; i<40; i++){
+ $("#main").append(div);
+ }
+
+
 $( document ).ready(function() {
-  $( document ).on( "click", function( event ) {
 
-$("#try").text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+   for(var i=0; i<42; i++){
 
-});
-});
+   $("#main").append("<div></div>");
+
+   }
+
+ });

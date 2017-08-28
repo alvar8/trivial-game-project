@@ -1,6 +1,15 @@
-img{
+#main{
   width: 80%;
   height: 800px;
   display: block;
   margin: 0 auto;
+  background-color: red;
+}
+
+
+div{
+  background-color: blue;
+  width:20%;
+  height: 80px;
+  display: inline-block;
 }
