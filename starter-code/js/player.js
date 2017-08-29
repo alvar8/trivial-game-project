@@ -1,4 +1,9 @@
-function Player(){
+function Player(name, x, y){
+  this.element = $('<div>').attr('id',name);
+  this.x = x;
+  this.y = y;
+  this.element.css({top:this.y, left:this.x, position:'absolute', height:'30px', width:'30px', background:'grey'});
+  $('#main').append(this.element);
   this.position = 0;
   this.quesitoArt = false;
   this.quesitoSport = false;
