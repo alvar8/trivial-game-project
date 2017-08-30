@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     var go = "#0-" + player1.possiblePosition;
     player1.possiblePosition += myDice.throwDice();
-    if (player1.possiblePosition > 23) {
+    if (player1.possiblePosition > 23) { // we make that the player can start again after finishing the board
       var start = 0;
       var res = player1.possiblePosition - 23;
       start += res;
@@ -29,10 +29,12 @@ $(document).ready(function() {
     }
     player1.updatePosition();
     var moving = "#0-" + player1.possiblePosition;
-    console.log(moving);
+
     $(go).remove("div");
     $(moving).append(a);
-    //console.log(a);
+    $("#questionAndAnswers").css('visibility','visible');
+    $("#question p").empty();
+    $("#question p").append(question.getQuestion(question.art));
   });
 
 
