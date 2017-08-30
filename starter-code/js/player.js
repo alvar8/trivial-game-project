@@ -1,22 +1,29 @@
 function Player(position) {
-  this.element = position;
+  this.image = position;
   //$('#main').append(this.element);
   this.position = [0, 0];
   this.possiblePosition = 0;
-  this.quesitoArt = false;
-  this.quesitoSport = false;
-  this.quesitoHistory = false;
-  this.quesitoGeography = false;
-  this.quesitoProgramming = false;
-  this.quesitoScience = false;
+  this.quisitos=[false,false,false,false,false,false]
   this.answer = "8";
 }
 
+Player.prototype.createHtml = function() {
+  $("#0-0").append(this.image);
+};
 
+Player.prototype.updatePosition = function(number) {
+  var go = "#0-" + this.possiblePosition;
+  $(go).empty();
+  this.possiblePosition+=number;
+  if (this.possiblePosition > 23) {
+    var start = 0;
+    var res = this.possiblePosition - 23;
+    start += res;
+    this.possiblePosition = start;
+  }
+  var moving = "#0-" + this.possiblePosition;
+  $(moving).append(this.image);
 
-
-Player.prototype.canMove = function() {
-  return true;
 };
 
 
@@ -24,15 +31,25 @@ Player.prototype.getAnswer = function() {
   return this.answer;
 };
 
-Player.prototype.updatePosition = function() {
-  this.position[0, this.possiblePosition];
-  console.log(this);
+
+
+Player.prototype.updateQuesito = function(id) {
+
+  if($( id ).hasClass( "art" )){
+    this.quesitos[0] = true ;
+  }else if ($( id ).hasClass( "sport" )) {
+    this.quesitos[1] = true ;
+  }else if ($( id ).hasClass( "history" )) {
+    this.quesitos[2] = true ;
+  }else if ($( id ).hasClass( "geography" )) {
+    this.quesitos[3] = true ;
+  }else if ($( id ).hasClass( "programming" )) {
+    this.quesitos[4] = true ;
+  }else if ($( id ).hasClass( "science" )) {
+    this.quesitos[5] = true ;
+  }
 };
 
-Player.prototype.updateQuesito = function() {
-
-};
-
-Player.prototype.win = function() {
+Player.prototype.checkWin = function() {
 
 };
