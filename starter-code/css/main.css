@@ -22,7 +22,10 @@
   visibility: hidden;
   text-align: center;
 }
-
+#wrong{
+  text-align: center;
+  visibility: hidden;
+}
 li {
   list-style-type: none;
   display: inline-block;

@@ -17,10 +17,15 @@ var myDice = new Dice();
 $(document).ready(function() {
 
   $("#dice").on("click", function() {
+    //first we eliminate the text if you were wrong previously
+    $("#wrong h3").empty();
+    $("#wrong").css('visibility','hidden');
 
+    //we move the player
     var go = "#0-" + player1.possiblePosition;
     player1.possiblePosition += myDice.throwDice();
-    if (player1.possiblePosition > 23) { // we make that the player can start again after finishing the board
+    // we check if the player has finish the board and has to start again
+    if (player1.possiblePosition > 23) {
       var start = 0;
       var res = player1.possiblePosition - 23;
       start += res;
@@ -31,6 +36,8 @@ $(document).ready(function() {
 
     $(go).remove("div");
     $(moving).append(a);
+
+    //we show the question
     $("#questionAndAnswers").css('visibility','visible');
     $("#question p").empty();
     $("#question p").append(question.getQuestion(question.getCategory(moving)));
@@ -43,7 +50,9 @@ $(document).ready(function() {
      if(question.compareAnswer(question.currentAnswer,player1.answer)==true){
         $("#answer p").append("Correct! You can continue");
      }else{
-        $("#answer p").append("Sorry, you are wrong");
+        $("#wrong").css('visibility','visible');
+        $("#wrong h3").append("Sorry, you are wrong");
+        $("#questionAndAnswers").css('visibility','hidden');
      }
 
   });

@@ -141,8 +141,8 @@ QuestionAndAnswers.prototype.getQuestion = function(category) {
 };
 
 QuestionAndAnswers.prototype.compareAnswer = function(answer, playerAnswer) {
-  //answer.toUpperCase();
-  //playerAnswer.toUpperCase();
+  answer.toUpperCase();
+  playerAnswer.toUpperCase();
   if (answer == playerAnswer) {
     return true;
   } else {
