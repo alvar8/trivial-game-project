@@ -150,20 +150,20 @@ QuestionAndAnswers.prototype.compareAnswer = function(answer, playerAnswer) {
   }
 };
 
-QuestionAndAnswers.prototype.getCategory =function(id){
+QuestionAndAnswers.prototype.getCategory = function(id) {
   var category;
-  if($( id ).hasClass( "art" )){
-    category= this.art;
-  }else if ($( id ).hasClass( "sport" )) {
-    category= this.sport;
-  }else if ($( id ).hasClass( "history" )) {
-    category= this.history;
-  }else if ($( id ).hasClass( "geography" )) {
-    category= this.geography;
-  }else if ($( id ).hasClass( "programming" )) {
-    category= this.programming;
-  }else if ($( id ).hasClass( "science" )) {
-    category= this.science;
+  if ($(id).hasClass("art")) {
+    category = this.art;
+  } else if ($(id).hasClass("sport")) {
+    category = this.sport;
+  } else if ($(id).hasClass("history")) {
+    category = this.history;
+  } else if ($(id).hasClass("geography")) {
+    category = this.geography;
+  } else if ($(id).hasClass("programming")) {
+    category = this.programming;
+  } else if ($(id).hasClass("science")) {
+    category = this.science;
   }
 
 

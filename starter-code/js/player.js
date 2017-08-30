@@ -3,7 +3,7 @@ function Player(position) {
   //$('#main').append(this.element);
   this.position = [0, 0];
   this.possiblePosition = 0;
-  this.quisitos=[false,false,false,false,false,false]
+  this.quesitos=[false,false,false,false,false,false];
   this.answer = "8";
 }
 
