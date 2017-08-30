@@ -1,7 +1,7 @@
 function Board() {
   //this.player1 = player1;
   //this.player2 = player2;
-  this.turn = 0;
+  this.turn = player1;
 
 }
 
@@ -37,5 +37,18 @@ Board.prototype.checkAnswer = function(player) {
     player.updateQuesito("#0-" + player.possiblePosition);
   } else {
     board.wrongAnswer();
+    board.changeTurn();
+  }
+};
+
+Board.prototype.changeTurn = function(){
+  if(this.turn==player1){
+    this.turn=player2;
+  }else if (this.turn==player2) {
+    this.turn=player3;
+  }else if (this.turn==player3) {
+    this.turn=player4;
+  }else if (this.turn==player4) {
+    this.turn=player1;
   }
 };

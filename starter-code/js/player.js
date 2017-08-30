@@ -7,13 +7,13 @@ function Player(position) {
   this.answer = "8";
 }
 
-Player.prototype.createHtml = function() {
-  $("#0-0").append(this.image);
+Player.prototype.createHtml = function(location) {
+  $(location).append(this.image);
 };
 
-Player.prototype.updatePosition = function(number) {
+Player.prototype.updatePosition = function(number,whichplayer) {
   var go = "#0-" + this.possiblePosition;
-  $(go).empty();
+  $(go).remove("#player1");
   this.possiblePosition+=number;
   if (this.possiblePosition > 23) {
     var start = 0;
