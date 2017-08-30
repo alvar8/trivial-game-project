@@ -16,7 +16,6 @@ var myDice = new Dice();
 
 $(document).ready(function() {
 
-
   $("#dice").on("click", function() {
 
     var go = "#0-" + player1.possiblePosition;
@@ -34,7 +33,19 @@ $(document).ready(function() {
     $(moving).append(a);
     $("#questionAndAnswers").css('visibility','visible');
     $("#question p").empty();
-    $("#question p").append(question.getQuestion(question.art));
+    $("#question p").append(question.getQuestion(question.getCategory(moving)));
+  });
+
+
+  $("#send").on("click", function() {
+    $("#answer p").empty();
+    player1.answer=$("input:text").val();
+     if(question.compareAnswer(question.currentAnswer,player1.answer)==true){
+        $("#answer p").append("Correct! You can continue");
+     }else{
+        $("#answer p").append("Sorry, you are wrong");
+     }
+
   });
 
 
