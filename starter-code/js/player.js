@@ -11,7 +11,7 @@ Player.prototype.createHtml = function(location) {
   $(location).append(this.image);
 };
 
-Player.prototype.updatePosition = function(number,whichplayer) {
+Player.prototype.updatePosition = function(number) {
   var go = "#0-" + this.possiblePosition;
   $(go).remove("#player1");
   this.possiblePosition+=number;
