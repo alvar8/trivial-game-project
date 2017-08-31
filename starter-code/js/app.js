@@ -2,27 +2,31 @@ var player1 = new Player($('<div>').attr('id', 'player1').css({
   top: 30,
   left: 30,
   position: 'absolute'
-}));
+}),"#score1");
 var player2 = new Player($('<div>').attr('id', 'player2').css({
   top: 30,
   left: 30,
   position: 'absolute'
-}));
+}),"#score2");
 var player3 = new Player($('<div>').attr('id', 'player3').css({
   top: 30,
   left: 30,
   position: 'absolute'
-}));
+}),"#score3");
 var player4 = new Player($('<div>').attr('id', 'player4').css({
   top: 30,
   left: 30,
   position: 'absolute'
-}));
+}),"#score4");
 
 player2.possiblePosition=6;
 player3.possiblePosition=12;
 player4.possiblePosition=18;
 
+var quesito1 = new Quesito(player1.score);
+var quesito2 = new Quesito(player2.score);
+var quesito3 = new Quesito(player3.score);
+var quesito4 = new Quesito(player4.score);
 
 var board = new Board();
 var question = new QuestionAndAnswers();
@@ -33,6 +37,8 @@ $(document).ready(function() {
   player2.createHtml("#0-6");
   player3.createHtml("#0-12");
   player4.createHtml("#0-18");
+
+
 
   $("#dice").on("click", function() {
     board.cleanQuestion();

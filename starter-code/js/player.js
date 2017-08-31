@@ -1,6 +1,6 @@
-function Player(position) {
+function Player(position,score) {
   this.image = position;
-  //$('#main').append(this.element);
+  this.score=score;
   this.position = [0, 0];
   this.possiblePosition = 0;
   this.quesitos=[false,false,false,false,false,false];
@@ -37,18 +37,27 @@ Player.prototype.updateQuesito = function(id) {
 
   if($( id ).hasClass( "art" )){
     this.quesitos[0] = true ;
+
   }else if ($( id ).hasClass( "sport" )) {
     this.quesitos[1] = true ;
+
   }else if ($( id ).hasClass( "history" )) {
     this.quesitos[2] = true ;
+
   }else if ($( id ).hasClass( "geography" )) {
     this.quesitos[3] = true ;
+
   }else if ($( id ).hasClass( "programming" )) {
     this.quesitos[4] = true ;
+
   }else if ($( id ).hasClass( "science" )) {
     this.quesitos[5] = true ;
+
   }
 };
+
+
+
 
 Player.prototype.checkWin = function() {
 

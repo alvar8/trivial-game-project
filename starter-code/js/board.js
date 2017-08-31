@@ -2,7 +2,7 @@ function Board() {
   //this.player1 = player1;
   //this.player2 = player2;
   this.turn = player1;
-
+  this.currentQuesito=quesito1;
 }
 
 
@@ -35,6 +35,7 @@ Board.prototype.checkAnswer = function(player) {
   if (question.compareAnswer(question.currentAnswer, player.answer) == true) {
     $("#answer p").append("Correct! You can continue");
     player.updateQuesito("#0-" + player.possiblePosition);
+    this.currentQuesito.markAsSuccess(player);
   } else {
     board.wrongAnswer();
     board.changeTurn();
@@ -44,11 +45,15 @@ Board.prototype.checkAnswer = function(player) {
 Board.prototype.changeTurn = function(){
   if(this.turn==player1){
     this.turn=player2;
+    this.currentQuesito=quesito2;
   }else if (this.turn==player2) {
     this.turn=player3;
+    this.currentQuesito=quesito3;
   }else if (this.turn==player3) {
     this.turn=player4;
+    this.currentQuesito=quesito4;
   }else if (this.turn==player4) {
     this.turn=player1;
+    this.currentQuesito=quesito1;
   }
 };

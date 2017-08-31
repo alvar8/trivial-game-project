@@ -37,6 +37,16 @@
   background-color: black;
   border-radius: 50%;
 }
+#scoreleft{
+  float:left;
+  width:10%;
+}
+#scoreRight{
+  float:right;
+  width:10%;
+}
+
+
 
 #questionAndAnswers {
   visibility: hidden;
@@ -46,7 +56,7 @@
   text-align: center;
   visibility: hidden;
 }
-li {
+#main li {
   list-style-type: none;
   display: inline-block;
   width: 13.9%;
@@ -84,4 +94,38 @@ li {
 
 .space {
   margin-right: 71.75%;
+}
+
+
+.quesitoHolder{
+  .quesito{
+   height:40px;
+   width: 100%;
+   border: 2px solid black;
+   text-align: center;
+   line-height: 40px;
+   color: white;
+   margin: 3px;
+   color:black;
+   &.art.success{
+     background: red;
+   }
+   &.sciences.success{
+     background: blue;
+   }
+   &.programming.success{
+     background: yellow;
+   }
+   &.sport.success{
+     background: green;
+   }
+   &.history.success{
+     color:white;
+     background: black;
+   }
+   &.geography.success{
+     color:black;
+     background: purple;
+   }
+  }
 }
