@@ -38,13 +38,29 @@ $(document).ready(function() {
   player3.createHtml("#0-12");
   player4.createHtml("#0-18");
 
-
+var resultDice;
 
   $("#dice").on("click", function() {
     board.cleanQuestion();
-    board.turn.updatePosition(myDice.throwDice(),board.turn);
-    board.writeQuestion(board.turn);
+    $("#left").css('visibility','visible');
+    $("#right").css('visibility','visible');
+     resultDice= myDice.throwDice();
+    return resultDice;
   });
+
+  $("#right").on("click", function (){
+    board.turn.updatePosition(resultDice,board.turn);
+    board.writeQuestion(board.turn);
+    $("#right").css('visibility','hidden');
+    $("#left").css('visibility','hidden');
+  });
+   $("#left").on("click", function (){
+
+     board.turn.updatePosition(-resultDice,board.turn);
+     board.writeQuestion(board.turn);
+     $("#left").css('visibility','hidden');
+     $("#right").css('visibility','hidden');
+   });
 
 
   $("#send").on("click", function() {

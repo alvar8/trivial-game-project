@@ -14,6 +14,7 @@ Player.prototype.createHtml = function(location) {
 Player.prototype.updatePosition = function(number) {
   var go = "#0-" + this.possiblePosition;
   $(go).remove("#player1");
+  console.log("estoy sumando "+ number + " a " + this.possiblePosition);
   this.possiblePosition+=number;
   if (this.possiblePosition > 23) {
     var start = 0;
@@ -21,7 +22,14 @@ Player.prototype.updatePosition = function(number) {
     start += res;
     this.possiblePosition = start;
   }
-  var moving = "#0-" + this.possiblePosition;
+  if(this.possiblePosition < 0) {
+
+    var subs = 24+this.possiblePosition;
+
+    this.possiblePosition = subs;
+  }
+  console.log(this.possiblePosition);
+  var moving = "#0-" +this.possiblePosition;
   $(moving).append(this.image);
 
 };
