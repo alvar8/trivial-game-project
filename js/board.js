@@ -15,7 +15,7 @@ Board.prototype.writeQuestion = function(player) {
   $("#questionAndAnswers").css('visibility', 'visible');
   //$("#question p").append(question.getQuestion(question.getCategory(moving)));
 
-  $("#question p").append(question.getQuestion(question.getCategory("#"+player.possiblePositionY +"-"+ player.possiblePositionX)));
+  $("#question p").append(question.getQuestion(question.getCategory("#" + player.possiblePositionY + "-" + player.possiblePositionX)));
 };
 
 Board.prototype.cleanAnswer = function() {
@@ -33,7 +33,7 @@ Board.prototype.checkAnswer = function(player) {
   player.answer = $("input:text").val();
   if (question.compareAnswer(question.currentAnswer, player.answer) == true) {
     $("#answer p").append("Correct! You can continue");
-    player.updateQuesito("#"+player.possiblePositionY +"-"+ player.possiblePositionX);
+    player.updateQuesito("#" + player.possiblePositionY + "-" + player.possiblePositionX);
     this.currentQuesito.markAsSuccess(player);
   } else {
     board.wrongAnswer();
@@ -57,17 +57,17 @@ Board.prototype.changeTurn = function() {
   }
 };
 
-Board.prototype.showInside=function(){
-  if(this.turn.possiblePositionX==3){
-    $("#inside").css("visibility","visible");
+Board.prototype.showInside = function() {
+  if (this.turn.possiblePositionX == 3) {
+    $("#inside").css("visibility", "visible");
   }
-  if(this.turn.possiblePositionX==9){
-    $("#inside").css("visibility","visible");
+  if (this.turn.possiblePositionX == 9) {
+    $("#inside").css("visibility", "visible");
   }
-  if(this.turn.possiblePositionX==15){
-    $("#inside").css("visibility","visible");
+  if (this.turn.possiblePositionX == 15) {
+    $("#inside").css("visibility", "visible");
   }
-  if(this.turn.possiblePositionX==21){
-    $("#inside").css("visibility","visible");
+  if (this.turn.possiblePositionX == 21) {
+    $("#inside").css("visibility", "visible");
   }
 };

@@ -43,26 +43,28 @@
 #scoreleft {
   float: left;
   width: 10%;
-  margin-left:10px;
+  margin-left: 10px;
   margin-top: 10px;
 }
 
 #scoreRight {
   float: right;
   width: 10%;
-  margin-right:10px;
+  margin-right: 10px;
   margin-top: 10px;
 }
-#score1 h4{
-  color:grey;
-}
-#score2 h4{
-  color:orange;
-}
-#score3 h4{
-  color:brown;
+
+#score1 h4 {
+  color: grey;
 }
 
+#score2 h4 {
+  color: orange;
+}
+
+#score3 h4 {
+  color: brown;
+}
 
 #dice {
   background-image: url("images/dice.jpg");
@@ -74,7 +76,7 @@
   margin-bottom: 10px;
 }
 
-#left{
+#left {
   visibility: hidden;
   background-image: url("images/left.jpg");
   background-size: cover;
@@ -84,10 +86,19 @@
   margin-left: 20px;
 }
 
-
-#right{
+#right {
   visibility: hidden;
   background-image: url("images/right.jpg");
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  border-radius: 10%;
+  margin-left: 20px;
+}
+
+#inside {
+  visibility: hidden;
+  background-image: url("images/inside.jpg");
   background-size: cover;
   height: 70px;
   width: 70px;
@@ -100,10 +111,12 @@
   text-align: center;
   margin-top: -150px;
 }
-#numberDice span{
+
+#numberDice span {
   margin-left: 20px;
   font-size: 22px;
 }
+
 #wrong {
   text-align: center;
   visibility: hidden;
@@ -116,34 +129,34 @@
   position: relative;
 }
 
-h3{
+h3 {
   font-size: 24px;
 }
-p{
+
+p {
   font-size: 20px;
 }
 
-input{
-    font-size: 18px;
-    padding:6px 10px;
-    margin: 8px 0;
-    box-sizing: border-box;
+input {
+  font-size: 18px;
+  padding: 6px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
-#send{
-  background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 26px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 10%;
+#send {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10%;
 }
-#inside{
-  visibility:hidden;
-}
+
 .square {
   width: 100%;
   height: 90px;
