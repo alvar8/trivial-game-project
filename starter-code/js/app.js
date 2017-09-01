@@ -45,14 +45,18 @@ var resultDice;
     $("#left").css('visibility','visible');
     $("#right").css('visibility','visible');
      resultDice= myDice.throwDice();
+     board.showInside();
     return resultDice;
   });
+
+
 
   $("#right").on("click", function (){
     board.turn.updatePosition(resultDice,board.turn);
     board.writeQuestion(board.turn);
     $("#right").css('visibility','hidden');
     $("#left").css('visibility','hidden');
+    $("#inside").css('visibility','hidden');
   });
    $("#left").on("click", function (){
 
@@ -60,12 +64,21 @@ var resultDice;
      board.writeQuestion(board.turn);
      $("#left").css('visibility','hidden');
      $("#right").css('visibility','hidden');
+     $("inside").css('visibility','hidden');
    });
 
+   $("#inside").on("click",function(){
+     board.turn.updatePositionY(resultDice,board.turn);
+     board.writeQuestion(board.turn);
+     $("#right").css('visibility','hidden');
+     $("#left").css('visibility','hidden');
+     $("#inside").css('visibility','hidden');
+   });
 
   $("#send").on("click", function() {
     board.cleanAnswer();
     board.checkAnswer(board.turn);
+    board.turn.checkWin(board.turn.quesitos);
   });
 
 

@@ -6,6 +6,7 @@ function Player(position,score) {
   this.possiblePositionY = 0;
   this.quesitos=[false,false,false,false,false,false];
   this.answer = "8";
+  this.win=0;
 }
 
 Player.prototype.createHtml = function(location) {
@@ -15,20 +16,7 @@ Player.prototype.createHtml = function(location) {
 Player.prototype.updatePosition = function(number) {
   var go = "#"+this.possiblePositionY +"-"+ this.possiblePositionX;
   $(go).remove("#player1");
-  // for(var i=this.possiblePositionX;i<i+number;i++){
-  //   if(i==3){
-  //     $("#inside").css("visibility","visible");
-  //   }
-  //   if(i==9){
-  //
-  //   }
-  //   if(i==15){
-  //
-  //   }
-  //   if(i==21){
-  //
-  //   }
-  // }
+
   console.log("estoy sumando "+ number + " a " + this.possiblePositionX);
   this.possiblePositionX+=number;
   if (this.possiblePositionX > 23) {
@@ -44,6 +32,30 @@ Player.prototype.updatePosition = function(number) {
     this.possiblePositionX = subs;
   }
   console.log(this.possiblePositionX);
+  var moving = "#"+this.possiblePositionY +"-"+ this.possiblePositionX;
+  $(moving).append(this.image);
+
+};
+
+Player.prototype.updatePositionY = function(number) {
+  var go = "#"+this.possiblePositionY +"-"+ this.possiblePositionX;
+  $(go).remove("#player1");
+
+  console.log("estoy sumando "+ number + " a " + this.possiblePositionX);
+  this.possiblePositionY+=number;
+  // if (this.possiblePositionX > 23) {
+  //   var start = 0;
+  //   var res = this.possiblePositionX - 23;
+  //   start += res;
+  //   this.possiblePositionX = start;
+  // }
+  // if(this.possiblePositionX < 0) {
+  //
+  //   var subs = 24+this.possiblePositionX;
+  //
+  //   this.possiblePositionX = subs;
+  // }
+  console.log(this.possiblePositionY);
   var moving = "#"+this.possiblePositionY +"-"+ this.possiblePositionX;
   $(moving).append(this.image);
 
@@ -82,6 +94,17 @@ Player.prototype.updateQuesito = function(id) {
 
 
 
-Player.prototype.checkWin = function() {
-
+Player.prototype.checkWin = function(playerNow) {
+  var win=0;
+  for(var i=0;i<playerNow.length;i++){
+    if(playerNow[i]==true){
+      win+=1;
+    }
+  }
+  console.log(win);
+  if(win==6){
+    alert(board.turn + " wins!!!");
+  }else{
+    win=0;
+  }
 };

@@ -56,3 +56,18 @@ Board.prototype.changeTurn = function() {
     this.currentQuesito = quesito1;
   }
 };
+
+Board.prototype.showInside=function(){
+  if(this.turn.possiblePositionX==3){
+    $("#inside").css("visibility","visible");
+  }
+  if(this.turn.possiblePositionX==9){
+    $("#inside").css("visibility","visible");
+  }
+  if(this.turn.possiblePositionX==15){
+    $("#inside").css("visibility","visible");
+  }
+  if(this.turn.possiblePositionX==21){
+    $("#inside").css("visibility","visible");
+  }
+};
