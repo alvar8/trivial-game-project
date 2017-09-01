@@ -100,8 +100,8 @@ function QuestionAndAnswers() {
       answer: '8'
     },
     {
-      question: 'Which sport use the Spirit of the Game?',
-      answer: 'Ultimate Frisbee'
+      question: 'How many players are there in a volleyball team?',
+      answer: '6'
     }
   ];
   this.programming = [{
@@ -131,8 +131,8 @@ function QuestionAndAnswers() {
 QuestionAndAnswers.prototype.getQuestion = function(category) {
   var randomNumber = Math.floor(Math.random() * 5);
 
-  var theQuestion = category[randomNumber].question;
 
+  var theQuestion = category[randomNumber].question;
   this.currentAnswer = category[randomNumber].answer;
   console.log(this.currentAnswer);
 

@@ -2,7 +2,8 @@ function Player(position,score) {
   this.image = position;
   this.score=score;
   this.position = [0, 0];
-  this.possiblePosition = 0;
+  this.possiblePositionX = 0;
+  this.possiblePositionY = 0;
   this.quesitos=[false,false,false,false,false,false];
   this.answer = "8";
 }
@@ -12,24 +13,38 @@ Player.prototype.createHtml = function(location) {
 };
 
 Player.prototype.updatePosition = function(number) {
-  var go = "#0-" + this.possiblePosition;
+  var go = "#"+this.possiblePositionY +"-"+ this.possiblePositionX;
   $(go).remove("#player1");
-  console.log("estoy sumando "+ number + " a " + this.possiblePosition);
-  this.possiblePosition+=number;
-  if (this.possiblePosition > 23) {
+  // for(var i=this.possiblePositionX;i<i+number;i++){
+  //   if(i==3){
+  //     $("#inside").css("visibility","visible");
+  //   }
+  //   if(i==9){
+  //
+  //   }
+  //   if(i==15){
+  //
+  //   }
+  //   if(i==21){
+  //
+  //   }
+  // }
+  console.log("estoy sumando "+ number + " a " + this.possiblePositionX);
+  this.possiblePositionX+=number;
+  if (this.possiblePositionX > 23) {
     var start = 0;
-    var res = this.possiblePosition - 23;
+    var res = this.possiblePositionX - 23;
     start += res;
-    this.possiblePosition = start;
+    this.possiblePositionX = start;
   }
-  if(this.possiblePosition < 0) {
+  if(this.possiblePositionX < 0) {
 
-    var subs = 24+this.possiblePosition;
+    var subs = 24+this.possiblePositionX;
 
-    this.possiblePosition = subs;
+    this.possiblePositionX = subs;
   }
-  console.log(this.possiblePosition);
-  var moving = "#0-" +this.possiblePosition;
+  console.log(this.possiblePositionX);
+  var moving = "#"+this.possiblePositionY +"-"+ this.possiblePositionX;
   $(moving).append(this.image);
 
 };

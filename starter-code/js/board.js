@@ -14,7 +14,8 @@ Board.prototype.writeQuestion = function(player) {
   console.log(question);
   $("#questionAndAnswers").css('visibility', 'visible');
   //$("#question p").append(question.getQuestion(question.getCategory(moving)));
-  $("#question p").append(question.getQuestion(question.getCategory("#0-" + player.possiblePosition)));
+
+  $("#question p").append(question.getQuestion(question.getCategory("#"+player.possiblePositionY +"-"+ player.possiblePositionX)));
 };
 
 Board.prototype.cleanAnswer = function() {
@@ -32,7 +33,7 @@ Board.prototype.checkAnswer = function(player) {
   player.answer = $("input:text").val();
   if (question.compareAnswer(question.currentAnswer, player.answer) == true) {
     $("#answer p").append("Correct! You can continue");
-    player.updateQuesito("#0-" + player.possiblePosition);
+    player.updateQuesito("#"+player.possiblePositionY +"-"+ player.possiblePositionX);
     this.currentQuesito.markAsSuccess(player);
   } else {
     board.wrongAnswer();
