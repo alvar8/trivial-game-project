@@ -45,35 +45,35 @@ $(document).ready(function() {
     $("#left").css('visibility', 'visible');
     $("#right").css('visibility', 'visible');
     resultDice = myDice.throwDice();
-    board.showInside();
     return resultDice;
   });
 
 
 
   $("#right").on("click", function() {
-    board.turn.updatePosition(resultDice, board.turn);
-    board.writeQuestion(board.turn);
     $("#right").css('visibility', 'hidden');
     $("#left").css('visibility', 'hidden');
     $("#inside").css('visibility', 'hidden');
+    board.turn.updatePosition(resultDice, board.turn);
+    board.writeQuestion(board.turn);
+
   });
   $("#left").on("click", function() {
-
-    board.turn.updatePosition(-resultDice, board.turn);
-    board.writeQuestion(board.turn);
     $("#left").css('visibility', 'hidden');
     $("#right").css('visibility', 'hidden');
     $("inside").css('visibility', 'hidden');
+    board.turn.updatePosition(-resultDice, board.turn);
+    board.writeQuestion(board.turn);
+    
   });
 
-  $("#inside").on("click", function() {
-    board.turn.updatePositionY(resultDice, board.turn);
-    board.writeQuestion(board.turn);
-    $("#right").css('visibility', 'hidden');
-    $("#left").css('visibility', 'hidden');
-    $("#inside").css('visibility', 'hidden');
-  });
+  // $("#inside").on("click", function() {
+  //   board.turn.updatePositionY(resultDice, board.turn);
+  //   board.writeQuestion(board.turn);
+  //   $("#right").css('visibility', 'hidden');
+  //   $("#left").css('visibility', 'hidden');
+  //   $("#inside").css('visibility', 'hidden');
+  // });
 
   $("#send").on("click", function() {
     board.cleanAnswer();

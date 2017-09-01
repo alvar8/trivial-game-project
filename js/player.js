@@ -35,31 +35,10 @@ Player.prototype.updatePosition = function(number) {
   var moving = "#" + this.possiblePositionY + "-" + this.possiblePositionX;
   $(moving).append(this.image);
 
-};
-
-Player.prototype.updatePositionY = function(number) {
-  var go = "#" + this.possiblePositionY + "-" + this.possiblePositionX;
-  $(go).remove("#player1");
-
-  console.log("estoy sumando " + number + " a " + this.possiblePositionX);
-  this.possiblePositionY += number;
-  // if (this.possiblePositionX > 23) {
-  //   var start = 0;
-  //   var res = this.possiblePositionX - 23;
-  //   start += res;
-  //   this.possiblePositionX = start;
-  // }
-  // if(this.possiblePositionX < 0) {
-  //
-  //   var subs = 24+this.possiblePositionX;
-  //
-  //   this.possiblePositionX = subs;
-  // }
-  console.log(this.possiblePositionY);
-  var moving = "#" + this.possiblePositionY + "-" + this.possiblePositionX;
-  $(moving).append(this.image);
 
 };
+
+
 
 
 Player.prototype.getAnswer = function() {

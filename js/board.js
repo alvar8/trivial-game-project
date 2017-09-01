@@ -58,16 +58,9 @@ Board.prototype.changeTurn = function() {
 };
 
 Board.prototype.showInside = function() {
-  if (this.turn.possiblePositionX == 3) {
+  console.log("muestro boton");
+  $("#left").css('visibility', 'visible');
+  $("#right").css('visibility', 'visible');
     $("#inside").css("visibility", "visible");
-  }
-  if (this.turn.possiblePositionX == 9) {
-    $("#inside").css("visibility", "visible");
-  }
-  if (this.turn.possiblePositionX == 15) {
-    $("#inside").css("visibility", "visible");
-  }
-  if (this.turn.possiblePositionX == 21) {
-    $("#inside").css("visibility", "visible");
-  }
+
 };
